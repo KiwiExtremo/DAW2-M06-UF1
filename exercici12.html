@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercici JavaScript 12</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            body {
+                text-align: center;
+            }
+        </style>
+
+        <script>
+            window.onload = initialize;
+
+            function initialize() {             
+                document.getElementById('btnChangeName').onclick = changeName;
+            
+                function changeName() {
+                    var newName = prompt("Introdueix el teu nom:");
+
+                    document.getElementById('bold').innerHTML = newName;
+                    
+                    document.getElementById('paragraph').innerHTML += ". Visita aquest video: <a href='https://www.youtube.com/watch?v=s7ykocU8Nog'>innerHTML</a>";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>UF1: Pràctica 12</h1>
+
+        <h2>Canvi de text amb innerHTML</h2>
+        <p id='paragraph'> Benvingut a la nostra web <strong id = 'bold'>[el teu nom]</strong> </p>
+        <input id='btnChangeName' type = 'button' value = 'Introduir nom' />
+    </body>
+</html>

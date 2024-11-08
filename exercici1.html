@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercici JavaScript 1</title>
+        <meta charset="UTF-8">
+
+        <style>
+            #button1 {
+                margin: 20px;
+            }
+
+            #result1 {
+                margin-left: 10px;
+                padding: 10px;
+                display: inline-flex;
+            }
+        </style>
+
+        <script>
+            window.onload = function() {
+                var button1 = document.getElementById("button1");
+                var opened = false;
+
+                button1.onclick = function() {
+                    var thisDiv = document.getElementById("result1");
+
+                    if (!opened) {
+                        thisDiv.innerHTML = "Em dic Ariel<br>";
+                        thisDiv.innerHTML += "i tinc 24 anys";
+
+                        thisDiv.style.backgroundColor = 'lightgray';
+
+                        button1.value = "Amagar";
+
+                        opened = true;
+                    } else {
+                        thisDiv.innerHTML = "";
+
+                        button1.value = "Mostrar";
+
+                        thisDiv.style.backgroundColor = '';
+
+                        opened = false;
+                    }
+                };
+            };
+        </script>
+    </head>
+    <body>
+        <h1>Texto de ejemplo</h1>
+        <input type="button" value="Mostrar" id="button1"/>
+        <div id="result1"></div>
+    </body>
+</html>

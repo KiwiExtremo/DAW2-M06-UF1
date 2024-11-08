@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercici JavaScript 8</title>
+
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+    
+    <script>
+        function initialize() {
+            document.getElementById("buttonEnglish").onclick = englishPractice;
+        }
+
+        function englishPractice() {
+            var word = prompt("Introdueix una paraula per traduir a l'anglès (d'entre casa, taula, gos o gat):");
+            var translation;
+
+            switch (word) {
+                case "casa":
+                    translation = "house";
+                    break;
+                
+                case "taula":
+                    translation = "table";
+                    break;
+                
+                case "gos":
+                    translation = "dog";
+                    break;
+                
+                case "gat":
+                    translation = "cat";
+                    break;
+
+                default:
+                    translation = null;
+            }
+            
+            if (translation == null) {
+                document.getElementById("englishDiv").innerHTML = "La paraula \"" + word + "\" no és una de les especificades";
+
+            } else {
+                document.getElementById("englishDiv").innerHTML = "La paraula \"" + word + "\" en anglès és \"" + translation + "\"";
+            }
+        }
+
+        window.onload = initialize;
+    </script>
+</head>
+<body>
+    <h1>UF1: Pràctica 8</h1>
+
+    <h4>Practicar anglès:</h4>
+    <div id="englishDiv"></div>
+    <input type="button" id="buttonEnglish" value="Practicar"/>
+</body>
+</html>

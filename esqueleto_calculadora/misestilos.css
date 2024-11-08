@@ -1,0 +1,77 @@
+html {
+	height: 100vh;
+}
+
+body {
+	text-align: center;
+	margin-top: 25vh;
+	background-color: #551A3C;
+	background-image: url(background_image.webp);
+
+	/* Center and scale the image nicely */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.calculadora {
+	display: inline-block;
+	justify-content: center;
+	background-color: #00000080;
+	padding: 20px;
+	border-radius: 10px;
+	-webkit-box-shadow: 0 0 10px 30px #00000080;
+  	box-shadow: 0 0 10px 30px #00000080;
+}
+
+.numero, .operacio, .coma {
+	width:60px;
+	height:60px;
+}
+
+.numero {
+	background-color: #fd9058;
+	border-top: 2px solid #FDAB49;
+	border-left: 2px solid #FDAB49;
+	border-bottom: 2px solid #FF6E58;
+	border-right: 2px solid #FF6E58;
+}
+
+.igual {
+	width:124px;
+	height:60px;
+	
+}
+
+table {
+	background-color: #B41357;
+	border-top: 4px solid #D90E67;
+	border-left: 4px solid #D90E67;
+	border-bottom: 4px solid #7C1C4A;
+	border-right: 4px solid #7C1C4A;
+}
+
+input  {
+	background-color: #FD6C5A;
+	border-top: 2px solid #FE8A54;
+	border-left: 2px solid #FE8A54;
+	border-bottom: 2px solid #F6546A;
+	border-right: 2px solid #F6546A;
+}
+
+.display {
+	height:30px;
+	width:240px;
+	background-color:#48163B;
+	border:medium #FFF;
+	font: "Space Age";
+	color: #FDE956;
+	font-size:18px;
+	text-align:right;
+	padding:5px;
+	border-top: 2px solid #6C1B46;
+	border-left: 2px solid #6C1B46;
+	border-bottom: 2px solid #1D0924;
+	border-right: 2px solid #1D0924;
+}
+

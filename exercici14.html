@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercici JavaScript 14</title>
+
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+    
+    <script>
+        window.onload = initialize;
+
+        function initialize() {
+            document.getElementById("btnMax").onclick = btnMax;
+            document.getElementById("btnMin").onclick = btnMin;
+            document.getElementById("btnPow").onclick = btnPow;
+            document.getElementById("btnRandom").onclick = btnRandom;
+            document.getElementById("btnRound").onclick = btnRound;
+            document.getElementById("btnSqrt").onclick = btnSqrt;
+        }
+
+        function btnMax() {
+            var result = document.getElementById("result");
+            var num1 = prompt("Introdueix el primer número a comparar:");
+            var num2 = prompt("Introdueix el segon número a comparar:");
+
+            var max = Math.max(num1, num2);
+
+            result.innerHTML = `El màxim entre [${num1}, ${num2}] és ${max}`;
+        }
+
+        function btnMin() {
+            var result = document.getElementById("result");
+            var num1 = prompt("Introdueix el primer número a comparar:");
+            var num2 = prompt("Introdueix el segon número a comparar:");
+
+            var min = Math.min(num1, num2);
+
+            result.innerHTML = `El mínim entre [${num1}, ${num2}] és ${min}`;
+        }
+
+        function btnPow() {
+            var result = document.getElementById("result");
+            var base = prompt("Introdueix el número a elevar:");
+            var exponent = prompt("Introdueix la potencia:");
+
+            var pow = Math.pow(base, exponent);
+
+            result.innerHTML = `El resultat de ${base}^${exponent} és ${pow}`;
+        }
+
+        function btnRandom() {
+            var result = document.getElementById("result");
+
+            var random = Math.random();
+
+            result.innerHTML = `El número aleatori entre 0 i 1 és ${random}`;
+        }
+
+        function btnRound() {
+            var result = document.getElementById("result");
+            var num = parseFloat(prompt("Introdueix un número decimal:"));
+
+            var round = Math.round(num);
+
+            result.innerHTML = `El número ${num} arrodonit és ${round}`;
+        }
+
+        function btnSqrt() {
+            var result = document.getElementById("result");
+            var num = prompt("Introdueix un número:");
+
+            var root = Math.sqrt(num);
+
+            result.innerHTML = `L'arrel quadrada de ${num} és ${root}`;
+        }
+    </script>
+</head>
+<body>
+    <h1>UF1: Pràctica 14</h1>
+
+    <h4>Proves amb Math:</h4>
+    <p id="result">Línia de resultat</p>
+    <br>
+    <input type="button" id="btnMax" value="Max"/>
+    <input type="button" id="btnMin" value="Min"/>
+    <input type="button" id="btnPow" value="Pow"/>
+    <input type="button" id="btnRandom" value="Random"/>
+    <input type="button" id="btnRound" value="Round"/>
+    <input type="button" id="btnSqrt" value="Sqrt"/>
+</body>
+</html>

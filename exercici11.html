@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercici JavaScript 11</title>
+
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        window.onload = initialize;
+
+        function initialize() {
+            document.getElementById("btnChangeColor").onclick = changeColor;
+            document.getElementById("btnChangeSize").onclick = changeSize;
+            document.getElementById("btnChangeBG").onclick = changeBG;
+        }
+
+        function changeColor() {
+            var paragraphs = document.getElementsByTagName("p");
+
+            for (var i = 0; i < paragraphs.length; i++) {
+                if (i % 2 != 0) {
+                    paragraphs[i].style = "color: red;";
+                }
+            }
+        }
+
+        function changeSize() {
+            var paragraphs = document.getElementsByClassName("lletraGran");
+
+            for (var i = 0; i < paragraphs.length; i++) {
+                    paragraphs[i].style = "font-size: xx-large;";
+            }
+        }
+
+        function changeBG() {
+            var paragraph = document.getElementById("cinque");
+
+            paragraph.style = "background-color: green;";
+        }
+    </script>
+</head>
+<body>
+    <h1>UF1: Pràctica 11</h1>
+    
+    <h2>Accés als elements de la pàgina</h2>
+    <p id="primer" class="lletraGran">primer paràgraf</p>
+    <p id="segon">segon paràgraf</p>
+    <p id="tercer" class="lletraGran">tercer paràgraf</p>
+    <p id="quart">quart paràgraf</p>
+    <p id="cinque">cinquè paràgraf</p>
+    
+    <input type="button" id="btnChangeColor" value="Canviar colors de lletra"/>
+    <input type="button" id="btnChangeSize" value="Canviar mida de lletra"/>
+    <input type="button" id="btnChangeBG" value="Canvar color de fons"/>
+</body>
+</html>

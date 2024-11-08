@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercici JavaScript 5</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            body {
+                text-align: center;
+            }
+
+            div {
+                display: inline-block;
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 30px;
+                padding: 20px;
+            }
+        </style>
+        <script>
+            window.onload = function() {
+                document.getElementById('buttonSquare').onclick = perimeter;
+                document.getElementById('buttonCalc2').onclick = sumAndProd1;
+                document.getElementById('buttonCalc4').onclick = sumAndProd2;
+                document.getElementById('buttonPrices').onclick = totalPrice;
+            }
+
+            function perimeter() {
+                var squareDiv = document.getElementById('squareDiv');
+
+                var squareSide = prompt('Introdueix la mesura del costat del quadrat: ');
+
+                var perimeter = parseInt(squareSide) * 4;
+
+                squareDiv.innerHTML = 'El perímetre del rectangle és de ' + perimeter;
+                squareDiv.style.backgroundColor = "lightgray";
+
+                
+            }
+
+            function sumAndProd1() {
+                var calc2Div = document.getElementById('calc2Div');
+
+                var number1 = prompt('Introdueix el primer número: ');
+                var number2 = prompt('Introdueix el segon número: ');
+                var number3 = prompt('Introdueix el tercer número: ');
+                var number4 = prompt('Introdueix el quart número: ');
+
+                var sum = parseInt(number1) + parseInt(number2);
+                var prod = number3 * number4;
+
+                calc2Div.innerHTML = 'La suma del 1r i el 2n número és: ' + sum;
+                calc2Div.innerHTML += 'El producte del 3r i el 4t número és: ' + prod;
+                calc2Div.style.backgroundColor = "lightgray";
+            }
+
+            function sumAndProd2() {
+                var calc4Div = document.getElementById('calc4Div');
+
+                var number1 = prompt('Introdueix el primer número: ');
+                var number2 = prompt('Introdueix el segon número: ');
+                var number3 = prompt('Introdueix el tercer número: ');
+                var number4 = prompt('Introdueix el quart número: ');
+
+                var sum = parseInt(number1) + parseInt(number2) + parseInt(number3) + parseInt(number4);
+                var prod = number1 * number2 * number3 * number4;
+
+                calc4Div.innerHTML = 'La suma dels 4 números és: ' + sum;
+                calc4Div.innerHTML += 'El producte dels 4 números és: ' + prod;
+                calc4Div.style.backgroundColor = "lightgray";
+            }
+
+            function totalPrice() {
+                var priceDiv = document.getElementById('priceDiv');
+
+                var productName = prompt('Introdueix el nom del producte ');
+                var price = prompt('Introdueix el preu de/la ' + productName + ': ');
+                var quantity = prompt('Introdueix la quantitat de ' + productName + ' comprats: ');
+
+                var totalPrice = price * quantity;
+
+                priceDiv.innerHTML = 'El total de ' + quantity + ' ' + productName + '(s) a ' + price + '€ cadascún surt a ' + totalPrice;
+                priceDiv.style.backgroundColor = "lightgray";
+            }
+        </script>
+    </head>
+    <body>
+        <h1>UF1: Pràctica 5</h1>
+
+        <h4>Calcular el perímetre d'un quadrat:</h4>
+        <div id="squareDiv"></div>
+        <input type="button" id="buttonSquare" value="Calcular"/>
+
+        <h4>Calcular la suma de 2 números i el producte d'uns altres 2:</h4>
+        <div id="calc2Div"></div>
+        <input type="button" id="buttonCalc2" value="Calcular"/>
+
+        <h4>Calcular la suma i producte de 4 números:</h4>
+        <div id="calc4Div"></div>
+        <input type="button" id="buttonCalc4" value="Calcular"/>
+
+        <h4>Calcular el preu a pagar sobre varis articles:</h4>
+        <div id="priceDiv"></div>
+        <input type="button" id="buttonPrices" value="Calcular"/>
+    </body>
+</html>

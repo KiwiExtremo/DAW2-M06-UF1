@@ -1,0 +1,14 @@
+body {
+    text-align: center;
+}
+
+.links {
+    display: inline; 
+    margin-left: 10px; 
+    margin-right: 10px;
+}
+
+.links > a:link {
+    color: rgb(218, 185, 0);
+    font-weight: bold;
+}

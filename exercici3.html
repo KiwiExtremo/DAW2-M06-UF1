@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercici JavaScript 3</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            h1 {
+                text-align: center;
+                margin: 20px 20px;
+            }
+
+            input {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 20px;
+            }
+
+            table {
+                background-color: lightgray;
+                margin-top: 20px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            th {
+                padding: 5px 10px;
+            }
+
+            td {
+                padding: 5px 10px;
+            }
+
+            #months {
+                margin: 20px;
+                text-align: center;
+            }
+        </style>
+
+        <script>
+            window.onload = function() {
+                var buttonSalary = document.getElementById("buttonSalary");
+                var buttonMonths = document.getElementById("buttonMonths");
+                var isSalaryShown = false;
+                var isMonthsShown = false;
+
+                var workerName = document.getElementById("name");
+                var workerSalary = document.getElementById("salary");
+                var monthsDiv = document.getElementById("months");
+                var monthsArray = ["Gener", "Febrer", "Març", "Abril", "Maig", "Juny", "Juliol", "Agost", "Setembre", "Octubre", "Novembre", "Desembre"];
+
+                buttonSalary.onclick = function() {
+                    if (!isSalaryShown) {
+                        workerName.innerHTML = "Ariel Gómez Valiente";
+                        workerSalary.innerHTML = 35000;
+
+                        buttonSalary.value = "Amagar dades";
+                        isSalaryShown = true;
+                    } else {
+                        workerName.innerHTML = "";
+                        workerSalary.innerHTML = "";
+
+                        buttonSalary.value = "Mostrar dades";
+                        isSalaryShown = false;
+                    }
+                };
+
+                buttonMonths.onclick = function() {
+                    if (!isMonthsShown) {
+                        monthsDiv.innerHTML = "<h4>Els mesos imparells son:</h4>";
+
+                        for (var i = 0; i < monthsArray.length; i += 2) {
+                            monthsDiv.innerHTML += monthsArray[i] + "<br>";
+                        };
+
+                        buttonMonths.value = "Amagar mesos imparells";
+                        isMonthsShown = true;
+                    } else {
+                        monthsDiv.innerHTML = "";
+
+                        buttonMonths.value = "Mostrar mesos imparells";
+                        isMonthsShown = false;
+                    }
+                };
+            }
+        </script>
+    </head>
+    <body>
+        <h1>UF1: Pràctica 3</h1>
+        <input type="button" id="buttonSalary" value="Mostrar dades"/>
+        <table>
+            <tr>
+                <th>Treballador</th>
+                <th>Sou</th>
+            </tr>
+            <tr>
+                <td id="name"></td>
+                <td id="salary"></td>
+            </tr>
+        </table>
+
+        <input type="button" id="buttonMonths" value="Mostrar mesos imparells"/>
+        <div id="months"></div>
+    </body>
+</html>

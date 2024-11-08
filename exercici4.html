@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercici JavaScript 4</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            body {
+                text-align: center;
+            }
+
+            #userData {
+                display: inline-block;
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 30px;
+                padding: 20px;
+            }
+        </style>
+
+        <script>
+            function inici() {
+                var name;
+                var address;
+                var dataDiv = document.getElementById('userData');
+                var shownButton = document.getElementById('dataButton');
+
+                name = prompt('Bon dia. Introdueix el teu nom d\'usuari: ');
+                address = prompt('Ara, introdueix el teu correu electrònic: ');
+                
+                dataDiv.innerHTML += 'Benvingut ' + name + '.<br>';
+                dataDiv.innerHTML += 'L\'adreça electrònica introduida és: ' + address;
+
+                dataDiv.style.backgroundColor = "lightgray";
+
+                shownButton.parentNode.removeChild(shownButton);
+            }
+            
+            window.onload = function () {
+                document.getElementById('dataButton').onclick = inici;
+            };
+        </script>
+    </head>
+    <body>
+        <h1>UF1: Pràctica 4</h1>
+        <input type="button" id="dataButton" value="Iniciar sessió"/>
+        <div id="userData"></div>
+    </body>
+</html>

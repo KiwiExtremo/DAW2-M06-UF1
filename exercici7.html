@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercici JavaScript 7</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            body {
+                text-align: center;
+            }
+        </style>
+        
+        <script>
+            
+            function initialize() {
+                document.getElementById("buttonCalc").onclick = checkNumbers;
+                document.getElementById("buttonTen").onclick = check10;
+                document.getElementById("buttonWorker").onclick = raiseSalary;
+                document.getElementById("buttonDiscount").onclick = applyDiscount;
+            }
+
+            function checkNumbers() {
+                var number1 = parseInt(prompt("Introdueix el primer número:"));
+                var number2 = parseInt(prompt("Introdueix el segon número:"));
+                var number3 = parseInt(prompt("Introdueix el tercer número:"));
+                
+                if (number1 == number2 && number1 == number3) {
+                    var total = (number1 + number2) * number3;
+
+                    document.getElementById("calcDiv").innerHTML = "La suma del primer amb el segon número multiplicat pel tercer és de " + total;
+                
+                } else {
+                    document.getElementById("calcDiv").innerHTML = "Els números no son iguals!";
+                }
+
+                document.getElementById("buttonCalc").value = "Tornar a calcular";
+            }
+
+            function check10() {
+                var number1 = parseInt(prompt("Introdueix el primer número:"));
+                var number2 = parseInt(prompt("Introdueix el segon número:"));
+                var number3 = parseInt(prompt("Introdueix el tercer número:"));
+                
+                if (number1 < 10 && number2 < 10 && number3 < 10) {
+                    document.getElementById("tenDiv").innerHTML = "Els 3 números són menors a 10";
+
+                } else {
+                    document.getElementById("tenDiv").innerHTML = "Hi ha algun número que és més gran (o igual) que 10";
+                }
+
+                document.getElementById("buttonTen").value = "Tornar a comprovar";
+            }
+
+            function raiseSalary() {
+                var oldSalary = parseInt(prompt("Introdueix el sou de l'operari:"));
+                var yearsWorked = parseInt(prompt("introdueix l'antiguitat (en anys) de l'operari:"));
+                var newSalary;
+
+                if (oldSalary < 1000 && yearsWorked >= 10) {
+                    newSalary = oldSalary + (oldSalary * 0.2);
+
+                } else if (oldSalary < 1000 && yearsWorked < 10) {
+                    newSalary = oldSalary + (oldSalary * 0.05);
+
+                } else {
+                    newSalary = oldSalary;
+                }
+                
+                if (newSalary != oldSalary) {
+                    document.getElementById("workerDiv").innerHTML = "El sou de l'operari ha passat de " + oldSalary + "€ a " + newSalary + "€. Enhorabona!";
+                } else {
+                    document.getElementById("workerDiv").innerHTML = "El sou de l'operari és de més de 1000€ (sou actual: " + oldSalary + "€), i per tant no rebrà un augment de sou";
+                }
+                document.getElementById("buttonWorker").value = "Actualitzar un altre cop";
+                
+            }
+
+            function applyDiscount() {
+                var isUnderage = confirm("Ets menor d'edat?");
+                var isUniStudent = confirm("Ets estudiant universitari?");
+                var applyDiscount = false;
+
+                if (isUnderage || isUniStudent) {
+                    applyDiscount = true;
+                }
+
+                if (applyDiscount) {
+                    document.getElementById("discountDiv").innerHTML = "Enhorabona! Pots rebre el descompte";
+                
+                } else {
+                    document.getElementById("discountDiv").innerHTML = "Llàstima! No pots rebre el descompte";
+                }
+            }
+
+            window.onload = initialize;
+        </script>
+    </head>
+    <body>
+        <h1>UF1: Pràctica 7</h1>
+
+        <h4>Operar amb 3 números iguals:</h4>
+        <div id="calcDiv"></div>
+        <input type="button" id="buttonCalc" value="Calcular"/>
+
+        <h4>Comprovar 3 números:</h4>
+        <div id="tenDiv"></div>
+        <input type="button" id="buttonTen" value="Comprovar"/>
+
+        <h4>Actualitzar sou de l'operari:</h4>
+        <div id="workerDiv"></div>
+        <input type="button" id="buttonWorker" value="Actualitzar"/>
+
+        <h4>Aplicar descompte a l'usuari:</h4>
+        <div id="discountDiv"></div>
+        <input type="button" id="buttonDiscount" value="Aplicar"/>
+    </body>
+</html>

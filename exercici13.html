@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercici JavaScript 13</title>
+
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        window.onload = initialize;
+
+        function initialize() {
+            document.getElementById("btnLength").onclick = btnLength;
+            document.getElementById("btnCharAt").onclick = btnCharAt;
+            document.getElementById("btnIndexOf").onclick = btnIndexOf;
+            document.getElementById("btnLastIndexOf").onclick = btnLastIndexOf;
+            document.getElementById("btnReplace").onclick = btnReplace;
+            document.getElementById("btnSplit").onclick = btnSplit;
+            document.getElementById("btnSubstring").onclick = btnSubstring;
+            document.getElementById("btnToLowerCase").onclick = btnToLowerCase;
+            document.getElementById("btnToUpperCase").onclick = btnToUpperCase;
+            document.getElementById("btnToString").onclick = btnToString;
+            document.getElementById("btnSearch").onclick = btnSearch;
+            document.getElementById("btnNewString").onclick = btnNewString;
+        }
+
+        function btnLength() {
+            var stringParagraph = document.getElementById("stringToTest");
+            var div = document.getElementById("testDiv");
+
+            var string = stringParagraph.innerHTML;
+
+            div.innerHTML = "Longitud de l'string: " + string.length;
+        }
+
+        function btnCharAt() {
+            var stringParagraph = document.getElementById("stringToTest");
+            var string = stringParagraph.innerHTML;
+            var div = document.getElementById("testDiv");
+
+            var charPos = parseInt(prompt("Introdueix la posició:"));
+            var charAtPos = string.charAt(charPos);
+
+            div.innerHTML = "El caràcter a la posició " + charPos + " és [" + charAtPos + "]";
+        }
+
+        function btnIndexOf() {
+            var stringParagraph = document.getElementById("stringToTest");
+            var string = stringParagraph.innerHTML;
+            var div = document.getElementById("testDiv");
+
+            var charToSearch = prompt("Introdueix el caràcter a buscar la primera instància:");
+
+            var pos = string.indexOf(charToSearch);
+
+            if (pos != -1) {
+                div.innerHTML = "El caràcter es troba a la posició " + pos;
+
+            } else {
+                div.innerHTML = "El caràcter [" + charToSearch + "] no es troba a l'string";
+            }
+        }
+
+        function btnLastIndexOf() {
+            var string = document.getElementById("stringToTest").innerHTML;
+            var div = document.getElementById("testDiv");
+
+            var charToSearch = prompt("Introdueix el caràcter a buscar la última instància:");
+
+            var pos = string.lastIndexOf(charToSearch);
+
+            if (pos != -1) {
+                div.innerHTML = "El caràcter es troba a la posició " + pos;
+
+            } else {
+                div.innerHTML = "El caràcter [" + charToSearch + "] no es troba a l\'string";
+            }
+        }
+
+        function btnReplace() {
+            var string = document.getElementById("stringToTest").innerHTML;
+            var div = document.getElementById("testDiv");
+
+            var stringToSearch = prompt("Introdueix l\'string a buscar:");
+            var stringToReplace = prompt("Introdueix l\'string a canviar:");
+
+            var newString = string.replace(stringToSearch, stringToReplace);
+
+            div.innerHTML = "El nou string és [" + newString + "]";
+        }
+
+        function btnSplit() {
+            var string = document.getElementById("stringToTest").innerHTML;
+            var div = document.getElementById("testDiv");
+
+            var charToSplitWith = prompt("Introdueix el caràcter per utilitzar de divisor:");
+
+            var stringArray = string.split(charToSplitWith);
+
+            div.innerHTML = "L\'string dividit és";
+
+            stringArray.forEach(element => {
+                div.innerHTML += " [" + element + "]";
+            });
+
+            div.innerHTML += ".";
+        }
+
+        function btnSubstring() {
+            var string = document.getElementById("stringToTest").innerHTML;
+            var div = document.getElementById("testDiv");
+
+            var posAtStart = prompt("Introdueix la posició del principi del substring:");
+            var posAtEnd = prompt("Introdueix la posició del final del substring:");
+
+            var substring = string.substring(posAtStart, posAtEnd);
+
+            div.innerHTML = "El substring és [" + substring + "]";
+        }
+
+        function btnToLowerCase() {
+            var string = document.getElementById("stringToTest").innerHTML;
+            var div = document.getElementById("testDiv");
+
+            var lowerCaseString = string.toLowerCase();
+            div.innerHTML = "L'string en minúscules és [" + lowerCaseString + "]";
+        }
+
+        function btnToUpperCase() {
+            var string = document.getElementById("stringToTest").innerHTML;
+            var div = document.getElementById("testDiv");
+
+            var upperCaseString = string.toUpperCase();
+            div.innerHTML = "L'string en majúscules és [" + upperCaseString + "]";
+        }
+
+        function btnToString() {
+            var stringParagraph = document.getElementById("stringToTest");
+            var div = document.getElementById("testDiv");
+
+            const creator = {
+                name : "Ariel",
+                surname : "Gómez",
+                age : 24
+            }
+
+            div.innerHTML = "L'objecte [creador] d'aquesta pàgina convertit a string és " + creator.toString();
+        }
+
+        function btnSearch() {
+            var string = document.getElementById("stringToTest").innerHTML;
+            var div = document.getElementById("testDiv");
+
+            var stringToSearch = prompt("Introdueix l'string a buscar:");
+            var posFound = string.search(stringToSearch);
+
+            if (posFound != -1) {
+                div.innerHTML = "L'string a buscar comença en la posició " + posFound;
+            } else {
+                div.innerHTML = "No s'ha trobat l'string a buscar";
+            }
+        }
+
+        function btnNewString() {
+            var div = document.getElementById("testDiv");
+            var p = document.getElementsByTagName("p");
+            var newString = prompt("Introdueix el nou string a provar:");
+
+            p[0].innerHTML = newString;
+            div.innerHTML = "";
+        }
+    </script>
+</head>
+<body>
+    <h1>UF1: Pràctica 13</h1>
+
+    <h4>Proves amb String:</h4>
+    <p id="stringToTest">Text d'exemple</p>
+    <div id="testDiv"></div>
+    <br>
+    <input type="button" id="btnLength" value="Length"/>
+    <input type="button" id="btnCharAt" value="CharAt"/>
+    <input type="button" id="btnIndexOf" value="IndexOf"/>
+    <input type="button" id="btnLastIndexOf" value="LastIndexOf"/>
+    <input type="button" id="btnReplace" value="Replace"/>
+    <input type="button" id="btnSplit" value="Split"/>
+    <input type="button" id="btnSubstring" value="Substring"/>
+    <input type="button" id="btnToLowerCase" value="ToLowerCase"/>
+    <input type="button" id="btnToUpperCase" value="ToUpperCase"/>
+    <input type="button" id="btnToString" value="ToString"/>
+    <input type="button" id="btnSearch" value="Search"/>
+    <br><br>
+    <input type="button" id="btnNewString" value="Nou string"/>
+</body>
+</html>
